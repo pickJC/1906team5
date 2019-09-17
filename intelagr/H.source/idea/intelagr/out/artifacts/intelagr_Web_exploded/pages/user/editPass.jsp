@@ -21,14 +21,22 @@
 				<tr>
 	    			<td class="table_common_td_label_style">用户名:</td>
 	    			<td class="table_common_td_txt_style">
+<<<<<<< HEAD
 	    			<input class="easyui-textbox" type="text" name="userID" value="${userID }" style="width:200px;" value="cszy" readonly></input>
+=======
+	    			<input class="easyui-textbox" type="text" name="userID" value="${user.userID }" style="width:200px;" value="cszy" readonly></input>
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 	    			<input type="hidden" name="id" style="width:200px;" value="14"></input>
 	    			</td>
     			</tr>
     			<tr>
 	    			<td class="table_common_td_label_style">密码:</td>
 	    			<td class="table_common_td_txt_style">
+<<<<<<< HEAD
 	    				<input class="easyui-textbox" type="password" name="password" style="width:200px;" value="96e79218965eb72c92a549dd5a330112"></input>
+=======
+	    				<input class="easyui-textbox" type="password" name="password" style="width:200px;" ></input>
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 	    				<span class="span_common_mustinput_style">*</span>
 	    			</td>
     			</tr>
@@ -58,6 +66,7 @@ function formCheck(){
 		data:a,
 		success:function(e){
 			if (200 == e.status) {
+<<<<<<< HEAD
 				$.messager.alert('提示','操作成功。','info');
 				$('#addDialog').window('close');
 				$('#userform').submit();
@@ -72,6 +81,18 @@ function formCheck(){
 			closeDialog();
 		}
 	});
+=======
+
+				$.messager.alert('提示','操作成功。','info');
+				$('#addDialog').window('close');
+				$('#userform').submit();
+			} else {
+                $.messager.alert('错误', e.msg, 'error');
+            }
+		},
+		dataType:"json"
+	});
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 }
 
 function closeDialog(){

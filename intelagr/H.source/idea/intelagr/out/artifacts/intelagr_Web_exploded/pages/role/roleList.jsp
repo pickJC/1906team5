@@ -217,7 +217,11 @@ function deleteRole(){
 	$.messager.confirm("确认", "您确认删除选定的记录吗？", function (deleteAction) {
 		if (deleteAction) {
 			showLoading();
+<<<<<<< HEAD
 			Public.ajaxGet('delete', {ids : ids}, function(e) {
+=======
+			Public.ajaxPost('delete', JSON.stringify(ids), function(e) {
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 				hideLoading();
 				if (200 == e.status) {
 					$.messager.alert('提示','操作成功。','info');

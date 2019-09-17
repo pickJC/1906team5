@@ -39,8 +39,18 @@
 					<tr>
 						<td class="table_common_td_label_query_style">用户类型：</td>
 						<td class="table_common_td_txt_query_style">
+<<<<<<< HEAD
 					<s:select name="userType" id="uType" entityName="CommonData" value="${pageModel.data.userType }" codeKey="UserType" hasPleaseSelectOption="true"></s:select>		
 		
+=======
+
+					<s:select name="userType" id="uType" entityName="CommonData" value="${pageModel.data.userType }" codeKey="UserType" hasPleaseSelectOption="true"></s:select>		
+					<!-- 等同于
+						<select name="userType" id="uType">
+
+					-->
+
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 
 						</td>
 						<td colspan="2" align="right" valign="bottom">
@@ -94,7 +104,13 @@
 				</tr>
 			</table>
 		</fieldset>
+<<<<<<< HEAD
 		<table id="data" class="easyui-datagrid" striped="true" checkbox="true" singleSelect="true" pageSize="${pageModel.pageSize }" pageNumber="${pageModel.page }">
+=======
+		<table id="data" class="easyui-datagrid" striped="true" checkbox="true"
+			   singleSelect="false" pageSize="${pageModel.pageSize }"
+			   pageNumber="${pageModel.page }">
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 			<thead>
 				<tr>
 					<th field="id" width="150" checkbox="true"  align="center"></th>
@@ -249,10 +265,22 @@ function detail(){
 }
 
 function deleteUser(){
+<<<<<<< HEAD
 	var ids = [];
 	var rows = $('#data').datagrid('getSelections');
 	var length = rows.length;
 	for(var i=0; i<rows.length; i++) ids.push(rows[i].userID);
+=======
+    //定义一个数组
+	var ids = [];
+	//获得行数组 存储了 选中的行对象
+	var rows = $('#data').datagrid('getSelections');
+	var length = rows.length;
+	//选中的行中的用户id 存入到数组中(ids)
+	for(var i=0; i<rows.length; i++) {
+	    ids.push(rows[i].userId);
+	}
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 	if(ids.length == 0){
 		$.messager.alert('警告','至少选择一个用户。','warning');
 		return false;
@@ -261,11 +289,30 @@ function deleteUser(){
 		$.messager.alert('警告','管理员账号不能删。','warning');
 		return false;
 	}
+<<<<<<< HEAD
+=======
+	//获得第一个选中行的 用户id
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 	var userID = rows[0].userId;
 	$.messager.confirm("确认", "您确认删除选定的记录吗？", function (deleteAction) {
 		if (deleteAction) {
 			showLoading();
+<<<<<<< HEAD
 			$.ajax({
+=======
+			for(var i = 0;i<ids.length;i++){
+			    alert(ids[i]);
+			}
+			Public.ajaxPost("/user/delete",JSON.stringify(ids),
+				function(e){
+                    if (200 == e.status) {
+                        $.messager.alert('提示','操作成功。','info');
+                        $('#userform').submit();
+                    } else
+                        $.messager.alert('错误',e.msg,'error');
+				})
+			/*$.ajax({
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 				url:"${pageContext.request.contextPath}/user/delete",
 				type:"post",
 				data:{userID :userID},
@@ -277,7 +324,11 @@ function deleteUser(){
 						$.messager.alert('错误',e.msg,'error');
 				},
 				dataType:"json"
+<<<<<<< HEAD
 			});
+=======
+			});*/
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 		}
 	});
 }

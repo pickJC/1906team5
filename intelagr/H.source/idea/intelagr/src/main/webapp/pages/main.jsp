@@ -24,6 +24,7 @@
     </div>
     <div region="west" split="true" title="管理后台" style="width:250px;"> 
     <ul id="menu_tree">
+<<<<<<< HEAD
 		<li class="menuTitleLi">
 			<span class="menuTitle">我的操控台</span>
 			<ul>
@@ -216,6 +217,18 @@
 
 			</ul>
 		</li>
+=======
+		<c:forEach items="${menuList}" var="m">
+		<li class="menuTitleLi">
+			<span class="menuTitle">${m.parent}</span>
+			<ul>
+				<c:forEach items="${m.child}" var="f">
+				<li iconCls="icon-ok"><span><a onClick="addTab('${f.functionName}','${pageContext.request.contextPath}/${f.functionURL}')">${f.functionName}</a></span></li>
+				</c:forEach>
+			</ul>
+		</li>
+		</c:forEach>
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 	</ul>
     </div>
     <div id="region_center" region="center">

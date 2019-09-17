@@ -66,10 +66,23 @@ $(function() {
 	}
 
 });
+<<<<<<< HEAD
 
 function onSubmit(){
 
 	window.location.href = "${pageContext.request.contextPath}/pages/main.jsp";
+=======
+function onSubmit(){
+	//AJax请求
+	var obj = $("#login-form").toObject();
+	Public.ajaxPost("/user/login",JSON.stringify(obj),function(data){
+	    if(data.status==200){
+	        location.href="/user/main";
+		}else{
+	        $.messager.alert("错误",data.msg,"info");
+		}
+	});
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 }
 
 document.onkeydown = function(e) {

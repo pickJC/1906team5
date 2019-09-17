@@ -14,6 +14,10 @@ public interface IUserService {
 	public User selectById(String userID);
 	public void update(User user);
 	public void delete(String userID);
+<<<<<<< HEAD
+=======
+	public void delete(String[] userIDs);
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 	public void resetPwd(String userID, String password);
 	public void startUse(String userID);
 	public void endUse(String userID);

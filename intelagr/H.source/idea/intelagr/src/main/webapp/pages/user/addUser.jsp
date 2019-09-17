@@ -58,6 +58,7 @@
 
 		 <input type="hidden" id="companyCode_companyName" name="companyName" value="">
 
+<<<<<<< HEAD
 		 <script type="text/javascript">
 
 			 $(document).ready(function(){ 
@@ -118,6 +119,9 @@
 			 });
 
 		</script>
+=======
+
+>>>>>>> bc07b727b0a9d9d8cc4ea447590fa68d954382c0
 
 	    			</td>
 	    			<td class="table_common_td_label_style">联系方式：</td>
